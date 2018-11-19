@@ -1,0 +1,25 @@
+<!--index.wxml-->
+  <view class="usermotto">
+    <text class="user-motto">群交友小助手</text>
+  </view>
+<view class="container">
+
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="section" style="text-align:center;border-bottom:1px solid #eee;margin-top:30px;">
+    <input placeholder="请输入姓名" bindinput="getName" placeholder-style="text-align:center;" auto-focus />
+  </view>
+ <view class="section" style="text-align:center;margin-top:20px;border-bottom:1px solid #eee">
+  <textarea bindinput="getSummary"   auto-height placeholder="输入个人简介" />
+</view>
+<view class="section" style="text-align:center;margin-top:20px;border-bottom:1px solid #eee">
+  <textarea  bindinput="getWant"  auto-height placeholder="想找啥样的朋友" />
+</view>
+<button type="default" style="margin-top:50px;" bindtap="submitInfo"> 提交 </button>
+
+</view>

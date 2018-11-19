@@ -1,0 +1,7 @@
+<view class='main'>
+  <view style="margin-bottom:10px">
+    <text>返回列表</text>
+  </view>
+  <text>感谢您的支持！</text>
+  <image src="../image/pay_code.jpg" style="height:450px;margin-top:20px;"/>
+</view>

@@ -1,0 +1,5 @@
+.main{
+  color: #2F4F4F;
+  font-size:14px;
+  text-align:center;
+}
