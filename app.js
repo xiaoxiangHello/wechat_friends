@@ -28,7 +28,6 @@ App({
           wx.getShareInfo({
             shareTicket: ops.shareTicket,
             complete(shareData) {
-   
               that.getOpenGId(res.data.openid, shareData.iv, shareData.encryptedData, res.data.session_key, that.callbackOpenGId)
             }
           })
@@ -77,7 +76,7 @@ App({
       
         if (!res.data.code) {
           wx.redirectTo({
-            url: '/pages/list/list?openGId=' + openGid 
+            url: '/pages/list/list?openGId='+openGid 
           })
         }
       }

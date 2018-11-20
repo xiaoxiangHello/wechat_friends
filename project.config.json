@@ -42,6 +42,18 @@
 					"query": "",
 					"scene": "1044",
 					"shareInfo": {
+						"groupName": "测试模拟群1",
+						"shareName": "xqGJTT90KBwfimTFD8nEaIqsPNSAyqK6nZ_iL_xKu9U@cr4dev",
+						"shareKey": "k6TOk8HUDT_gBERE4jdv2f94ts9sEvm1Sq5mrMXQ9rS2wg6wpdrcbnIz1oS8t9QPwWW1gWnQ6BUI4Tu43boBuQ~~"
+					}
+				},
+				{
+					"id": -1,
+					"name": "ticket",
+					"pathName": "pages/list/list",
+					"query": "",
+					"scene": "1044",
+					"shareInfo": {
 						"groupName": "测试模拟群2",
 						"shareName": "xqGJTT90KBwfimTFD8nEaElHfeF0hYQ04ZMH_rJzHSE@cr4dev",
 						"shareKey": "Ulay_9J3bceXGIJhy9DkRSsqN6VZk5lpdX4SNvoDKoTV3nEC2TGloe9I517MRPdOKpV7rTwDqBNP5MdatKo4nw~~"

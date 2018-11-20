@@ -11,6 +11,11 @@ Page({
     total:0,
     page:1,
   },
+  feedback:function(){
+    // wx.redirectTo({
+    //   url: '../feedback/index?openGId=' + this.data.openGId,
+    // })
+  },
   getInfoData:function(page){
     var that = this;
     wx.request({
@@ -24,8 +29,7 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success(res) {
-        console.log(res)
-        that.setData({
+        this.setData({
           list:res.data.data,
           page:page
         })
@@ -56,8 +60,9 @@ Page({
     }
   },
   getPay:function(){
+
     wx.redirectTo({
-      url: '../pay/index',
+      url: '../pay/index?openGId='+this.data.openGId,
     })
   },
   onLoad: function (options) {
