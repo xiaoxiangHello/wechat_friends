@@ -1,5 +1,5 @@
 <!--index.wxml-->
-  <view class="usermotto">
+  <!-- <view class="usermotto">
     <text class="user-motto">找朋友小助手</text>
     <view style="font-size:12px;margin-top:10px;color: #2F4F4F;">
       <text>此工具只会看到本群内的成员信息</text>
@@ -28,4 +28,7 @@
 </view>
 <button type="default" style="margin-top:50px;" bindtap="submitInfo"> 提交 </button>
 
+</view> -->
+<view>
+<text>shareTicket：[{{shareTicket}}]</text>
 </view>

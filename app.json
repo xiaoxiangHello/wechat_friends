@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/feedback/index",
     "pages/index/index",
+    "pages/feedback/index",
     "pages/list/list",
     "pages/logs/logs",
     "pages/pay/index"
