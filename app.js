@@ -13,7 +13,7 @@ App({
   getOpenId(code, ops, callback){
     var that = this
     wx.request({
-      url: 'http://api.lanyintao.com/home/group/getCode',
+      url: 'https://api.lanyintao.com/home/group/getCode',
       data: {
         code: code
       },
@@ -47,7 +47,7 @@ App({
   getOpenGId(openid, iv, encryptedData, session_key, callback){
     var that = this
     wx.request({
-      url: 'http://api.lanyintao.com/home/group/encrypt',
+      url: 'https://api.lanyintao.com/home/group/encrypt',
       data: {
         iv: iv,
         encryptedData: encryptedData,
@@ -68,7 +68,7 @@ App({
 
   verify(openid, openGid) {
     wx.request({
-      url: 'http://api.lanyintao.com/home/group/verify',
+      url: 'https://api.lanyintao.com/home/group/verify',
       data: {
         openid: openid,
         openGId: openGid
@@ -110,9 +110,7 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    console.log(options)
-    console.log(3)
-    console.log(1)
+    
     if (wx.getStorageSync('openGId') && wx.getStorageSync('openid'))
     {
       that.verify(wx.getStorageSync('openid'), wx.getStorageSync('openGId'))
@@ -123,7 +121,7 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      //that.globalData.code = res.code
+        //that.globalData.code = res.code
       that.getOpenId(res.code, options, that.callbackOpenId)
         
       }

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -42,9 +42,9 @@
 					"query": "",
 					"scene": "1044",
 					"shareInfo": {
-						"groupName": "测试模拟群5",
-						"shareName": "xqGJTT90KBwfimTFD8nEaC459ue_AsHJh8W9Zo2vVTo@cr4dev",
-						"shareKey": "xXiexBX1vXxUvVKYBgXnNmUPZ8EPru-gLllrHgkmyAiQL2DIWk-NSn3nSu3XyNE-bqX1rLo-kAkQoRRopwk9_A~~"
+						"groupName": "测试模拟群3",
+						"shareName": "xqGJTT90KBwfimTFD8nEaCRS1ajLu7hVi94FHux6yd4@cr4dev",
+						"shareKey": "Oc-bvSDNJ4L56WMgtIMEy6jDKssAg2K1_vINGlCDekFtJptDd4uf6ZNw6PPhVXoZ054aH6dbrUt_P7Qv_cKKYg~~"
 					}
 				},
 				{

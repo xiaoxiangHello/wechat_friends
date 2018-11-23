@@ -23,30 +23,18 @@ Page({
   }, 
 
   onLoad: function (ops) {
-    console.log(2)
     var openId = wx.getStorageSync('openid');
     var openGId = wx.getStorageSync('openGId');
     
     var share_ticket = wx.getStorageSync('share_ticket')
     console.log("share_ticket:"+share_ticket)
+    console.log(ops)
     this.setData({
       shareTicket:share_ticket,
       openId:openId,
       openGId:openGId
     })
    
-    // app.callbackOpenGId = res => {
-    //   this.setData({
-    //     openGId:res.data.openGId
-    //   })
-    // }
-
-    // app.callbackOpenId = res => {
-    //   console.log(4)
-    //   this.setData({
-    //     openId:res.data.openid
-    //   })
-    // }
     
     if (app.globalData.userInfo) {
       this.setData({
@@ -76,8 +64,6 @@ Page({
     }
   },
 
-  
- 
   getName: function (e) {
     this.setData({
       name: e.detail.value,
@@ -96,8 +82,6 @@ Page({
   submitInfo: function (e){
     var openId = wx.getStorageSync('openid');
     var openGId = wx.getStorageSync('openGId');
-    console.log(openId);
-    console.log(openGId);
 
     var summary = this.data.summary
     var name = this.data.name
@@ -110,7 +94,7 @@ Page({
     var sex = userInfo.gender
     
     wx.request({
-      url: 'http://api.lanyintao.com/home/group/submit',
+      url: 'https://api.lanyintao.com/home/group/submit',
       data:{
         summary:summary,
         name:name,

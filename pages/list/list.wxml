@@ -3,8 +3,19 @@
   <view style='margin-top:0px;text-align:center;'>
     <text style="font-weight:bold;">一共有{{total}}个发现</text>
   </view>
+  <view style="padding-top:40px;clear:both;font-weight:bold;margin-left:auto;margin-right:auto;">
+      <view style="width:30%;height:30px;float:left;text-align:right;line-height:30px;">
+      <text bindtap="fixSummary">[修改简介]</text>
+      </view>
+      <view style="width:40%;height:30px;float:left;text-align:center;">
+     
+      </view>
+       <view style="width:30%;height:30px;font-weight:bold;float:left;line-height:30px;">
+         <text bindtap="delSummary">[删除简介]</text>
+       </view>
+    </view>
 
-  <view wx:for="{{list}}" wx:key>
+  <view wx:for="{{list}}" wx:key style="padding-top:20px;">
     <view class="section">
     <image style="width: 125px; height: 125px; margin-top:10px;background-color: #eeeeee;margin-left:auto;margin-right:auto;border-radius:5px;" mode="" src="{{item.avatar}}"></image>
     <text style="font-weight:bold;">
@@ -43,15 +54,16 @@
     </view>
      <view style="padding-top:40px;clear:both;font-weight:bold;margin-left:auto;margin-right:auto;">
       <view style="width:30%;height:30px;float:left;text-align:right;line-height:30px;">
-      <text>意见&建议</text>
+      <text bindtap="feedback">意见&建议</text>
       </view>
       <view style="width:40%;height:30px;float:left;text-align:center;">
       <image src="../image/shang.png" style="width:30px;height:30px;" bindtap="getPay"/>
       </view>
        <view style="width:30%;height:30px;font-weight:bold;float:left;line-height:30px;">
-         <text>联系我们</text>
+         <text bindtap="connectus">联系我们</text>
        </view>
     </view>
+    
   </view>
    
 </view>

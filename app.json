@@ -3,7 +3,9 @@
     "pages/index/index",    
     "pages/list/list",
     "pages/logs/logs",
-    "pages/pay/index"
+    "pages/pay/index",
+    "pages/connectus/index",
+    "pages/feedback/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

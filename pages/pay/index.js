@@ -9,13 +9,10 @@ Page({
   },
   returnList:function(){
     wx.redirectTo({
-      url: '../list/list?openGId='+this.data.openGId,
+      url: '../list/list?openGId='+wx.getStorageSync('openGId'),
     })
   },
   onLoad: function (options) {
-    //console.log(options)
-    // that.setData({
-    //   openGId:options.openGId
-    // })
+  
   }
 })

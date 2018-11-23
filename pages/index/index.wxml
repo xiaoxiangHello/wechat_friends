@@ -29,12 +29,3 @@
 <button type="default" style="margin-top:50px;" bindtap="submitInfo"> 提交 </button>
 
 </view> 
-<view>
-<text>shareTicket:[{{shareTicket}}]</text>
-</view>
-<view>
-<text>openId:[{{openId}}]</text>
-</view>
-<view>
-<text>openGId:[{{openGId}}]</text>
-</view>
