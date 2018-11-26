@@ -2,13 +2,14 @@
 //获取应用实例
 const app = getApp()
 var that = this;
+var submit_type = '';
 Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     summary:'',
-    wantsum:'',
+    want:'',
     name:'',
     openId:'',
     openGId:'',
@@ -23,18 +24,37 @@ Page({
   }, 
 
   onLoad: function (ops) {
-    var openId = wx.getStorageSync('openid');
-    var openGId = wx.getStorageSync('openGId');
-    
+    var that = this;
+    var openId = wx.getStorageSync('openid')
+    var openGId = wx.getStorageSync('openGId')
     var share_ticket = wx.getStorageSync('share_ticket')
-    console.log("share_ticket:"+share_ticket)
-    console.log(ops)
-    this.setData({
-      shareTicket:share_ticket,
-      openId:openId,
-      openGId:openGId
-    })
-   
+    this.submit_type = ops.type
+
+    //修改简介
+    if(ops.type == "fix"){
+      wx.request({
+        url: 'https://api.lanyintao.com/home/group/fix',
+        data: {
+          id:ops.id
+        },
+        method:'POST',
+        header: {
+          'content-type': 'application/x-www-form-urlencoded' // 默认值
+        }, 
+        success (res){
+          var getdata = res.data.data
+          that.setData({
+            summary:getdata.summary,
+            name:getdata.name,
+            want:getdata.want
+          })
+        }
+      })   
+    }else{
+      if (openId && openGId) {
+        app.verify(openId, openGId)
+      }
+    }
     
     if (app.globalData.userInfo) {
       this.setData({
@@ -76,23 +96,21 @@ Page({
   },
   getWant: function (e) {
     this.setData({
-     wantsum: e.detail.value
+     want: e.detail.value
     })
   },
   submitInfo: function (e){
     var openId = wx.getStorageSync('openid');
     var openGId = wx.getStorageSync('openGId');
-
     var summary = this.data.summary
     var name = this.data.name
-    var want = this.data.wantsum
+    var want = this.data.want
     var userInfo = this.data.userInfo
     var city = userInfo.city
     var province = userInfo.province
     var country = userInfo.country
     var avatarUrl = userInfo.avatarUrl 
     var sex = userInfo.gender
-    
     wx.request({
       url: 'https://api.lanyintao.com/home/group/submit',
       data:{
@@ -105,7 +123,8 @@ Page({
         avatar:avatarUrl,
         openId:openId,
         openGId:openGId,
-        sex:sex
+        sex:sex,
+        submit_type:this.submit_type
       },
       method:'POST',
       header: {

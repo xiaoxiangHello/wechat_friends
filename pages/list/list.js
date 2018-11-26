@@ -12,12 +12,36 @@ Page({
     page:1,
   },
   fixSummary:function(){
+    var listitem = this.data.list
+    var id = listitem[0]['id']
     wx.redirectTo({
-      url: '../index/index?type=fix',
+      url: '../index/index?type=fix&id='+id,
     })
   },
   delSummary:function(){
-
+    var listitem = this.data.list
+    var id = listitem[0]['id']
+    wx.request({
+      url: 'https://api.lanyintao.com/home/group/delSum',
+      data:{
+        id:id
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success (res){
+        console.log(res)
+        if(res.data == 1){
+          wx.showToast({
+            title: '删除成功',
+          })
+          wx.redirectTo({
+            url: '../list/list',
+          })
+        }
+      }
+    })
   },
   feedback:function(){
     wx.redirectTo({
@@ -73,9 +97,13 @@ Page({
     }
   },
   getPay:function(){
-
     wx.redirectTo({
       url: '../pay/index?openGId='+this.data.openGId,
+    })
+  },
+  toIndex:function(){
+    wx.redirectTo({
+      url: '../index/index',
     })
   },
   onLoad: function (options) {
@@ -93,14 +121,19 @@ Page({
         'content-type': 'application/x-www-form-urlencoded' // 默认值
       },
       success (res){
+        console.log(res)
         if(res.data.code == 1){
            that.setData({
              list:res.data.data,
              total:res.data.total
            })
         }else{
-          
-
+          wx.showToast({
+            title: '还没人填啊',
+            duration: 1000
+          })
+       
+          setTimeout(that.toIndex, 1000)
         }
       }
     })
